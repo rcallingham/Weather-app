@@ -1,0 +1,83 @@
+body {
+  background: radial-gradient(
+    1224px at 10.6% 8.8%,
+    rgb(255, 255, 255) 0%,
+    rgb(153, 202, 251) 100.2%
+  );
+  font-family: "Barlow", sans-serif;
+}
+header {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  font-family: "Barlow", sans-serif;
+  color: #3d4140;
+}
+
+.main {
+  border: 3px solid #9ba6a5;
+  border-radius: 50%;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  padding: 65px;
+  margin-bottom: 15px;
+  background: #dae6e2;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h3 {
+  line-height: 10px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.row {
+  text-align: center;
+  margin: 0;
+}
+
+.degreeCol1 {
+  border: 1px solid #9ba6a5;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
+  padding-top: 15px;
+  background: #dae6e2;
+  font-weight: bolder;
+}
+
+.day {
+  font-size: 20px;
+}
+
+.emoji {
+  font-size: 40px;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.changecity {
+  display: block;
+  margin: 40px auto 10px;
+  padding: 10px 5px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 30px;
+  border: 1px solid #9ba6a5;
+}
+
+.submit {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2.5px 5px;
+  background: #e0e0e0;
+}

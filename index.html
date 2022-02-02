@@ -22,6 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,300;1,200&family=Montserrat:ital,wght@0,100;0,400;1,300&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <title>Weather</title>
   </head>
@@ -32,7 +33,7 @@
         <div class="row top">
           <div class="col"></div>
           <div class="col-4 main">
-            <h1>
+            <h1 id="displayCity">
               <strong>London</strong>
             </h1>
 
@@ -47,7 +48,7 @@
           <div class="col"></div>
         </div>
 
-        <p>Wednesday 15th December</p>
+        <p id="date">Wednesday 15th December</p>
       </header>
       <div class="row bottom">
         <div class="col-2">
@@ -93,6 +94,6 @@
         <input class="submit" type="submit" value="Change city" />
       </form>
     </div>
-    <script src="index.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>

@@ -80,11 +80,16 @@ function retrieveWeather(response) {
 function degreesFar(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#temp");
+  tempCel.classList.remove("active");
+  tempFar.classList.add("active");
   let tempFarenheit = (tempCelcius * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(tempFarenheit);
 }
 
 function degreesCel(event) {
+  event.preventDefault();
+  tempCel.classList.add("active");
+  tempFar.classList.remove("active");
   let tempElement = document.querySelector("#temp");
   tempElement.innerHTML = Math.round(tempCelcius);
 }

@@ -1,13 +1,5 @@
 let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thusday",
-  "Friday",
-  "Saturday",
-];
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let weekDay = days[now.getDay()];
 let hours = now.getHours();
 if (hours < 10) {
@@ -49,7 +41,32 @@ let month = monthName[now.getMonth()];
 let todayDate = document.querySelector("#date");
 todayDate.innerHTML = `${weekDay} ${date} ${month}`;
 let lastUpdated = document.querySelector("#time");
-lastUpdated.innerHTML = `Last updated:${hours}:${minutes}`;
+lastUpdated.innerHTML = `${hours}:${minutes}`;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weekly-forecast");
+  let forecastHTML = `<div class="row bottom">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="weather description"
+              class="emoji"
+            />
+    
+            <div class="degreeCol1">9°C</div>
+            <div class="day">${day}</div>
+            16th
+          </div> `;
+
+    forecastElement.innerHTML = forecastHTML;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+}
 
 function cityName(event) {
   event.preventDefault();
@@ -103,3 +120,5 @@ let tempFar = document.querySelector("#farenheit");
 tempFar.addEventListener("click", degreesFar);
 let tempCel = document.querySelector("#celcius");
 tempCel.addEventListener("click", degreesCel);
+
+displayForecast();

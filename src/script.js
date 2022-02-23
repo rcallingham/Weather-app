@@ -62,10 +62,10 @@ function displayForecast() {
             <div class="day">${day}</div>
             16th
           </div> `;
-
-    forecastElement.innerHTML = forecastHTML;
   });
   forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function cityName(event) {

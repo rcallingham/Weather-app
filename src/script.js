@@ -67,7 +67,8 @@ function displayForecast(response) {
               }.png
           "
               alt="weather description"
-              class="emoji"
+              
+
             />
     
             <div class="degreeCol1">${Math.round(forecastDay.temp.day)}°C</div>
@@ -87,16 +88,6 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function cityName(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector(".changecity");
-  let city = cityInput.value;
-  let apiKey = "e99f59e58dee72fd528847d5d83a9671";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-  axios.get(apiUrl).then(retrieveWeather);
-}
-
 function retrieveWeather(response) {
   let currentTemp = document.querySelector("#temp");
   let degrees = Math.round(response.data.main.temp);
@@ -110,36 +101,27 @@ function retrieveWeather(response) {
     "src",
     ` http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  tempCelcius = response.data.main.temp;
-
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   getForecast(response.data.coord);
 }
 
-function degreesFar(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
-  tempCel.classList.remove("active");
-  tempFar.classList.add("active");
-  let tempFarenheit = (tempCelcius * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(tempFarenheit);
+function search(city) {
+  let apiKey = "e99f59e58dee72fd528847d5d83a9671";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(retrieveWeather);
 }
 
-function degreesCel(event) {
+function cityName(event) {
   event.preventDefault();
-  tempCel.classList.add("active");
-  tempFar.classList.remove("active");
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(tempCelcius);
+  let cityInput = document.querySelector(".changecity");
+  search(cityInput.value);
 }
 
 let form = document.querySelector("form");
 form.addEventListener("submit", cityName);
 
-let tempCelcius = null;
-
-let tempFar = document.querySelector("#farenheit");
-tempFar.addEventListener("click", degreesFar);
-let tempCel = document.querySelector("#celcius");
-tempCel.addEventListener("click", degreesCel);
-
-getForecast(London);
+search("London");

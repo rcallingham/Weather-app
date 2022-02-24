@@ -12,7 +12,7 @@ body {
 }
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   margin-top: 20px;
   font-family: "Barlow", sans-serif;
   color: #3d4140;
@@ -24,7 +24,8 @@ header {
   text-align: center;
   height: 300px;
   width: 300px;
-  padding: 65px;
+  padding: 40px;
+  padding-top: 50px;
   margin-bottom: 15px;
   background: #dae6e2;
 }
@@ -34,13 +35,30 @@ h1 {
 }
 
 h3 {
-  line-height: 10px;
+  line-height: 5px;
+  font-size: 25px;
+}
+h2 {
+  line-height: 20px;
 }
 
 p {
   font-size: 20px;
 }
 
+#wind {
+  font-size: 13px;
+}
+#humidity {
+  font-size: 13px;
+}
+
+#date {
+  margin-bottom: 0;
+}
+#time {
+  margin-bottom: 0;
+}
 .row {
   text-align: center;
   margin: 0;
@@ -61,15 +79,20 @@ p {
   font-size: 20px;
 }
 
-.emoji {
-  font-size: 40px;
+#weekly-forecast img {
   margin-bottom: 5px;
   margin-top: 0;
+  width: 70px;
+}
+#main-image {
+  position: relative;
+  top: -20px;
+  width: 100px;
 }
 
 .changecity {
   display: block;
-  margin: 40px auto 10px;
+  margin: 20px auto 10px;
   padding: 10px 5px;
   font-size: 15px;
   text-align: center;
@@ -90,9 +113,4 @@ p {
   position: relative;
   font-size: 16px;
   top: -10px;
-}
-.units .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
 }

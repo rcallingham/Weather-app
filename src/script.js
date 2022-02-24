@@ -142,4 +142,4 @@ tempFar.addEventListener("click", degreesFar);
 let tempCel = document.querySelector("#celcius");
 tempCel.addEventListener("click", degreesCel);
 
-displayForecast();
+getForecast(London);

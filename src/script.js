@@ -72,8 +72,10 @@ function displayForecast(response) {
             />
     
             <div class="degreeCol1">${Math.round(forecastDay.temp.day)}°C</div>
-            <div class="day">${formatForecastDay(forecastDay.dt)}</div>
-            16th
+            <div class="day">${formatForecastDay(forecastDay.dt)}
+        </div>
+            
+    
           </div> `;
     }
   });
